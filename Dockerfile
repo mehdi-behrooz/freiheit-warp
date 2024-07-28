@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1
+
 FROM teddysun/xray:latest AS xray
 FROM alpine
 
@@ -8,7 +10,7 @@ RUN apk add envsubst                    # for: envsubst
 RUN apk add moreutils                   # for: sponge
 RUN apk add wireguard-tools-wg-quick    # for: wg-quick
 
-ENV LOG_LEVEL=debug
+ENV LOG_LEVEL=info
 
 ENV WARP_ENDPOINT=engage.cloudflareclient.com:2408
 ENV WARP_MTU=1200

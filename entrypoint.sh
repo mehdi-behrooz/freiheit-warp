@@ -13,8 +13,11 @@ done
 /usr/bin/wg-quick up warp
 
 trace=`curl -Ss --interface warp https://www.cloudflare.com/cdn-cgi/trace/`
-echo -e "Warp Trace: \n"
-echo -e "$trace \n" | sed 's/^/\t/'
+
+if [ "$LOG_LEVEL" == "debug" ]; then
+    echo -e "Warp Trace: \n"
+    echo -e "$trace \n" | sed 's/^/\t/'
+fi
 
 warp_on=`echo "$trace" | grep -e "warp=on" -e "warp=plus"`
 
