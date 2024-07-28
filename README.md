@@ -7,8 +7,8 @@ Connects to Cloudflare's Warp and Listens on a socks proxy on port 80.
 
 services:
   warp:
-    container_name: ghcr.io/mehdi-behrooz/freiheit-warp:latest
-    image: warp
+    container_name: warp
+    image: ghcr.io/mehdi-behrooz/freiheit-warp:latest
     cap_add:
       - NET_ADMIN
     environment:
