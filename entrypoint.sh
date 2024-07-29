@@ -19,11 +19,4 @@ if [ "$LOG_LEVEL" == "debug" ]; then
     echo -e "$trace \n" | sed 's/^/\t/'
 fi
 
-warp_on=`echo "$trace" | grep -e "warp=on" -e "warp=plus"`
-
-if [[ -z "$warp_on" ]]; then
-   echo "Couldn't connect to Cloudflare Warp; Terminating..."
-   exit 1
-fi
-
 exec $@
