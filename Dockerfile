@@ -31,6 +31,6 @@ CMD ["/usr/bin/xray", "run", "-c", "/etc/xray/xray.json"]
 EXPOSE 80
 
 HEALTHCHECK --interval=15m \
-    --start-interval=5s \
-    --start-period=5s \
+    --start-interval=30s \
+    --start-period=30s \
     CMD curl -Ss --interface warp https://www.cloudflare.com/cdn-cgi/trace/ | egrep -q "warp=on|warp=plus" && nc -z localhost 80 || exit 1
