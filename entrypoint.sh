@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if [[ -z "${WARP_PRIVATE_KEY}" ]]; then
+    echo "missing required environment variable WARP_PRIVATE_KEY"
+    exit 1
+fi
+
 for f in '/etc/xray/xray.json' '/etc/wireguard/warp.conf';
 do
     envsubst < $f | sponge $f
