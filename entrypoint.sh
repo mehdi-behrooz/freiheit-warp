@@ -19,9 +19,7 @@ done
 
 trace=`curl -Ss --interface warp https://www.cloudflare.com/cdn-cgi/trace/`
 
-if [ "$LOG_LEVEL" == "debug" ]; then
-    echo -e "Warp Trace: \n"
-    echo -e "$trace \n" | sed 's/^/\t/'
-fi
+echo -e "Warp Trace: \n"
+echo -e "$trace \n" | sed 's/^/\t/'
 
 exec $@
