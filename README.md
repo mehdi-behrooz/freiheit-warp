@@ -6,6 +6,16 @@ Connects to Cloudflare's Warp and listens on a socks proxy on port 80.
 
 ## Usage
 
+### docker run
+
+```bash
+docker run --cap-add=NET_ADMIN \
+        -e WARP_PRIVATE_KEY=${WARP_PRIVATE_KEY}
+        ghcr.io/mehdi-behrooz/freiheit-warp
+```
+
+### docker compose
+
 ```yaml
 services:
   warp:
