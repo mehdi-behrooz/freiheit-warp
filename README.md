@@ -1,7 +1,10 @@
-### Intro
-Connects to Cloudflare's Warp and Listens on a socks proxy on port 80.
+# Freiheit Warp
 
-### Usage
+## Intro
+
+Connects to Cloudflare's Warp and listens on a socks proxy on port 80.
+
+## Usage
 
 ```yaml
 services:

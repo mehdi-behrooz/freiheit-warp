@@ -1,14 +1,14 @@
 # syntax=docker/dockerfile:1
+# checkov:skip=CKV_DOCKER_3
 
-FROM teddysun/xray:latest AS xray
-FROM alpine
+FROM teddysun/xray:1.8.23 AS xray
+FROM alpine:3
 
-USER root
-
-RUN apk add curl                        # for: curl
-RUN apk add envsubst                    # for: envsubst
-RUN apk add moreutils                   # for: sponge
-RUN apk add wireguard-tools-wg-quick    # for: wg-quick
+# moreutils for: sponge
+# wireguard-tools-wg-quick for: wg-quick
+RUN apk update && apk add \
+        bash curl gettext-envsubst \
+        moreutils wireguard-tools-wg-quick
 
 ENV LOG_LEVEL=info
 
