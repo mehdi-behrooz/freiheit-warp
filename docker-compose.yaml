@@ -1,0 +1,11 @@
+services:
+  warp:
+    build: .
+    container_name: warp
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8000:80
+    environment:
+      - WARP_PRIVATE_KEY=${WARP_PRIVATE_KEY}
+      - LOG_LEVEL=debug
