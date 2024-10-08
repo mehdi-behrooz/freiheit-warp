@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 # checkov:skip=CKV_DOCKER_3
 
-FROM teddysun/xray:1.8.23 AS xray
+FROM teddysun/xray:24.9.30 AS xray
 FROM alpine:3
 
 # moreutils for: sponge
